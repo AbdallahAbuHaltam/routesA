@@ -8,6 +8,7 @@ import { EditServerComponent } from "./servers/edit-server/edit-server.component
 import { ServerComponent } from "./servers/server/server.component";
 import { UserComponent } from "./users/user/user.component";
 import { AuthGuard } from "./auth-guard.service";
+import { DeactivateGuard } from "./servers/edit-server/can-deactive-guard.service";
 
 
 const appRoutes:Routes=[
@@ -21,7 +22,7 @@ const appRoutes:Routes=[
     canActivateChild:[AuthGuard],
     children:[
       {path:':id',component:ServerComponent},
-      {path:':id/edit',component:EditServerComponent}
+      {path:':id/edit',component:EditServerComponent,canDeactivate:[DeactivateGuard]}
     ]},
     {path:'not-found',component:PageNotFoundComponent},
     {path:'**',redirectTo:'/not-found'}
