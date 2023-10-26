@@ -9,6 +9,7 @@ import { ServerComponent } from "./servers/server/server.component";
 import { UserComponent } from "./users/user/user.component";
 import { AuthGuard } from "./auth-guard.service";
 import { DeactivateGuard } from "./servers/edit-server/can-deactive-guard.service";
+import { ErrorMessageComponent } from "./error-message/error-message.component";
 
 
 const appRoutes:Routes=[
@@ -24,7 +25,8 @@ const appRoutes:Routes=[
       {path:':id',component:ServerComponent},
       {path:':id/edit',component:EditServerComponent,canDeactivate:[DeactivateGuard]}
     ]},
-    {path:'not-found',component:PageNotFoundComponent},
+    // {path:'not-found',component:PageNotFoundComponent},
+    {path:'not-found',component:ErrorMessageComponent,data:{message:'page not found'}},
     {path:'**',redirectTo:'/not-found'}
   
   

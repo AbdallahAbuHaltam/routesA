@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { DeactivateGuard } from './servers/edit-server/can-deactive-guard.service';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 
 
@@ -27,7 +28,8 @@ import { DeactivateGuard } from './servers/edit-server/can-deactive-guard.servic
     UserComponent,
     ServerComponent,
     EditServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,
